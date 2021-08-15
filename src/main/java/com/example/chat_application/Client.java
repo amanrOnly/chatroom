@@ -47,7 +47,7 @@ public class Client extends JFrame implements ActionListener {
 
         bp.add(send);
         bp.add(exit);
-        bp.setBackground(Color.RED);
+        bp.setBackground(Color.CYAN);
         bp.setName("Instant Messenger");
         add(bp,"North");
         send.addActionListener(this);

@@ -19,8 +19,8 @@ public class Server {
     public static void main(String[]args) throws Exception {
       ServerSocket server = new ServerSocket(8080, 10);
         out.println("Now Server Is Running");
-//        DbOperations.createUsersTable("users");
-//        DbOperations.createChatTable("chat_backup");
+        DbOperations.createUsersTable("users");
+        DbOperations.createChatTable("chat_backup");
         while (true) {
             Socket client = server.accept();
             MessagingThread thread = new MessagingThread(client);
@@ -51,7 +51,7 @@ public class Server {
             input = new BufferedReader(new InputStreamReader(client.getInputStream()));
             output = new PrintWriter(client.getOutputStream(), true);
 
-            user = input.readLine();////////////////////////////////////////////////////////////////
+            user = input.readLine();
             users.add(user);
 
             DbOperations.addUserInDB(user);
